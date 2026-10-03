@@ -1,0 +1,50 @@
+export const USDC_ADDRESS = "0x3600000000000000000000000000000000000000";
+
+export const POOLMANAGER_ADDRESS = "0xcf3C40142ff5C31b71c59f5191AAe26093742F2a";
+export const V4_QUOTER_ADDRESS = "0x277d57385768235e93f0B3fC67b48563Eb4A5a8c";
+export const PERMIT2_ADDRESS = "0x58228Bb87820aF037776182e78B41eb4fF82119d";
+export const WETH_ADDRESS="0x16F4f71584C523D3f3a96fBbb2b4C8b9dFf44e75";
+export const 
+POSITION_MANAGER_ADDRESS="0x7d00dB5115Db5e02ef0550E51BB459F7c72e5999";
+export const STATEVIEW_ADDRESS= "0xD786F8D819088de1AFeD102eee548F354b5cD011";
+export const UNIVERSALROUTER_ADDRESS="0x38d1FeCCef299Bba6B826e9cE5B628c817DB03c5";
+
+// export const FAUCET_ADDRESS="0xB777176ea921D4aA8Ab9aD6163c8bafacdCbeD44";
+export const POINTSHOOK_ADDRESS="0x759ebc7a9d4236a207cd5ade79d00a02c37bc040";
+
+export const ACTIONS = {
+  // --- Liquidity Actions (PositionManager) ---
+  INCREASE_LIQUIDITY: 0x00,              // 0
+  DECREASE_LIQUIDITY: 0x01,              // 1
+  MINT_POSITION: 0x02,                   // 2
+  BURN_POSITION: 0x03,                   // 3
+  INCREASE_LIQUIDITY_FROM_DELTAS: 0x04,  // 4
+  MINT_POSITION_FROM_DELTAS: 0x05,       // 5
+
+  // --- Swap Actions (Router) ---
+  SWAP_EXACT_IN_SINGLE: 0x06,            // 6
+  SWAP_EXACT_IN: 0x07,                   // 7
+  SWAP_EXACT_OUT_SINGLE: 0x08,           // 8
+  SWAP_EXACT_OUT: 0x09,                  // 9
+
+  // --- Utility & Payments ---
+  DONATE: 0x0a,                          // 10
+  SETTLE: 0x0b,                          // 11
+  SETTLE_ALL: 0x0c,                      // 12
+  SETTLE_PAIR: 0x0d,                     // 13
+  TAKE: 0x0e,                            // 14
+  TAKE_ALL: 0x0f,                        // 15
+  TAKE_PORTION: 0x10,                    // 16
+  TAKE_PAIR: 0x11,                       // 17
+  CLOSE_CURRENCY: 0x12,                  // 18
+  CLEAR_OR_TAKE: 0x13,                   // 19
+  SWEEP: 0x14,                           // 20
+  WRAP: 0x15,                            // 21
+  UNWRAP: 0x16,                          // 22
+
+  // --- ERC-6909 Actions ---
+  MINT_6909: 0x17,                       // 23
+  BURN_6909: 0x18                        // 24
+} as const;
+
+

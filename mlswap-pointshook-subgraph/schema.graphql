@@ -1,0 +1,39 @@
+# Tracks the cumulative ERC1155 points balance for a user per token ID
+# id: "<ownerAddress>-<tokenId>"
+type PointsBalance @entity(immutable: false) {
+  id: ID!
+  # address of the points holder
+  owner: String!
+  # ERC1155 token id (used as the pool identifier)
+  tokenId: BigInt!
+  # cumulative points balance
+  balance: BigInt!
+  # all transfers involving this balance
+  transfers: [PointsTransfer!]! @derivedFrom(field: "pointsBalance")
+}
+
+# Records each individual TransferSingle event
+# id: "<txHash>-<logIndex>"
+type PointsTransfer @entity(immutable: true) {
+  id: ID!
+  # operator that triggered the transfer
+  operator: String!
+  # sender (address(0) on mint)
+  from: String!
+  # recipient
+  to: String!
+  # ERC1155 token id
+  tokenId: BigInt!
+  # amount of points transferred/minted
+  amount: BigInt!
+  # block timestamp
+  timestamp: BigInt!
+  # block number
+  blockNumber: BigInt!
+  # transaction hash
+  transactionHash: String!
+  # log index within the transaction
+  logIndex: BigInt!
+  # pointer to the recipient's balance entity
+  pointsBalance: PointsBalance!
+}
